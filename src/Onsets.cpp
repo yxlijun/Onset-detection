@@ -1,4 +1,5 @@
 #include "Onsets.h"
+#include <iostream>
 using namespace std;
 
 Onset::Onset(string audiopath){
@@ -28,9 +29,13 @@ void Onset::Init(bool online){
 	else{
 		int frameSum = spectralOdf.getframeSum();
 		for (int i = 0; i < frameSum; i++){
+			Timer timer;
+			timer.Tic();
 			cursfresult = spectralOdf.CalSpectrumOnLine(i);
 			SFResult.push_back(cursfresult);
 			detect();
+			timer.Toc();
+			//std::cout << "cost time:" << timer.Elasped() << "ms" << endl;
 		}
 		int x;
 	}

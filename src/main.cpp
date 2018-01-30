@@ -4,7 +4,7 @@
 #include "tool.h"
 
 int main(){
-	string diroot = "../data/MAPS/1-5";
+	string diroot = "../data/midi/253";
 	vector<string> onsetfiles;
 	vector<string> audiofiles;
 	vector<string> curpaths;
